@@ -30,6 +30,20 @@ class AddressTest < ActiveSupport::TestCase
     assert_not address_without_email.valid?
   end
 
+  test "email format is validated" do
+    address = random_address
+    address.email = TestRandom.alphanumeric(17)
+    assert_not address.valid?
+  end
+
+  test "email is turned to lowercase before validation" do
+    address = random_address
+    mixed_cased_email = "aB.cdEF-gH_iJ@KlmN.oP-qR.sTu"
+    address.email = mixed_cased_email
+    assert address.valid?
+    assert_equal mixed_cased_email.downcase, address.email
+  end
+
   test "invalid if no zipcode" do
     address_without_zipcode = random_address
     address_without_zipcode.zipcode = nil
@@ -66,7 +80,7 @@ class AddressTest < ActiveSupport::TestCase
 
   test "valid home phone is digits only" do
     address = random_address
-    address.home_phone = TestRandom.alphanumeric(10)
+    address.home_phone = TestRandom.alphanumeric(9) + "a"
     assert_not address.valid?
   end
 
@@ -101,7 +115,8 @@ class AddressTest < ActiveSupport::TestCase
 
   test "valid cell phone is digits only" do
     address = random_address
-    address.cell_phone = TestRandom.alphanumeric(10)
+    # need to have at least one digit in the test data, otherwise it will be cleaned to blank which would be valid
+    address.cell_phone = TestRandom.alphanumeric(9) + "a1"
     assert_not address.valid?
   end
 
@@ -121,7 +136,7 @@ class AddressTest < ActiveSupport::TestCase
   private
   def random_address
     Address.new(city: TestRandom.alphanumeric(13),
-                email: TestRandom.alphanumeric(17),
+                email: "first.last@test.com",
                 home_phone: TestRandom.numeric(10),
                 state: TestRandom.alphanumeric(9),
                 street: TestRandom.alphanumeric(25),
