@@ -1,0 +1,5 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+one:
+  grade_id: 1
+  school_year_id: 1
+  book_charge_in_cents: 2500
