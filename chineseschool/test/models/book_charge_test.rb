@@ -12,7 +12,7 @@ class BookChargeTest < ActiveSupport::TestCase
     assert_not book_charge_without_value.valid?
   end
 
-  test "invalid if no book charge in cents is not an integer" do
+  test "invalid if book charge in cents is not an integer" do
     non_integer_book_charge = random_book_charge
     non_integer_book_charge.book_charge_in_cents = SecureRandom.random_number
     assert_not non_integer_book_charge.valid?
