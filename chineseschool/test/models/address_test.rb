@@ -133,6 +133,10 @@ class AddressTest < ActiveSupport::TestCase
     assert_equal "#{area_code}#{first_section}#{second_section}", address.cell_phone
   end
 
+  test "has one family" do
+    assert_equal families(:one), addresses(:one).family
+  end
+
   private
   def random_address
     Address.new(city: TestRandom.alphanumeric(13),

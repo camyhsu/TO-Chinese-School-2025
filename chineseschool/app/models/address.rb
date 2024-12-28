@@ -1,4 +1,6 @@
 class Address < ApplicationRecord
+  has_one :family
+
   validates :city, :state, :street, presence: true
   validates :cell_phone, length: { is: 10 }, allow_blank: true
   validates :cell_phone, format: { without: /\D/ }

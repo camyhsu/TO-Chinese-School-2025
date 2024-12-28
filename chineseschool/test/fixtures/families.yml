@@ -5,17 +5,4 @@
 # below each fixture, per the syntax in the comments below
 #
 one:
-  street: 123 First Street
-  city: Thousand Oaks
-  state: CA
-  zipcode: 91360
-  home_phone: 8055551234
-  email: first@test.com
-
-two:
-  street: '456 Second Street, Apt. #303'
-  city: Moorpark
-  state: CA
-  zipcode: 91310
-  home_phone: 8186664321
-  email: second.last@test.google.com
+  address: one
