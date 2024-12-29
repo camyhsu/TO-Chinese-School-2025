@@ -20,7 +20,7 @@ class BookChargeTest < ActiveSupport::TestCase
 
   test "invalid if book charge in cents is negative" do
     negative_book_charge = random_book_charge
-    negative_book_charge.book_charge_in_cents = - rand(100000)
+    negative_book_charge.book_charge_in_cents = - TestRandom.integer_from_0_to_exclusive(100000)
     assert_not negative_book_charge.valid?
   end
 
@@ -30,6 +30,8 @@ class BookChargeTest < ActiveSupport::TestCase
 
   private
   def random_book_charge
-    BookCharge.new(grade_id: rand(1..10), school_year_id: rand(1..20), book_charge_in_cents: rand(100000))
+    BookCharge.new(grade_id: 1,
+                   school_year_id: TestRandom.integer_from_a_range(1..20),
+                   book_charge_in_cents: TestRandom.integer_from_0_to_exclusive(100000))
   end
 end

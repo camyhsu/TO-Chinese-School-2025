@@ -20,7 +20,7 @@ class GatewayTransactionTest < ActiveSupport::TestCase
 
   test "invalid if amount in cents is negative" do
     gateway_transaction_with_negative_amount = random_gateway_transaction
-    gateway_transaction_with_negative_amount.amount_in_cents = - rand(100000)
+    gateway_transaction_with_negative_amount.amount_in_cents = - TestRandom.integer_from_0_to_exclusive(100000)
     assert_not gateway_transaction_with_negative_amount.valid?
   end
 
@@ -39,7 +39,7 @@ class GatewayTransactionTest < ActiveSupport::TestCase
 
   private
   def random_gateway_transaction
-    GatewayTransaction.new(amount_in_cents: rand(100000),
+    GatewayTransaction.new(amount_in_cents: TestRandom.integer_from_0_to_exclusive(100000),
                            credit_card_type: TestRandom.alphanumeric(5),
                            credit_card_last_digits: TestRandom.numeric(4))
   end
