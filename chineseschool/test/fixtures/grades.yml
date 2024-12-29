@@ -9,7 +9,7 @@ pre_grade:
 k_grade:
   id: 2
   chinese_name: 幼稚園
-  english_name: Kindergarden
+  english_name: Kindergarten
   short_name: K
   next_grade: 3
 

@@ -24,6 +24,10 @@ class BookChargeTest < ActiveSupport::TestCase
     assert_not negative_book_charge.valid?
   end
 
+  test "belongs to one grade" do
+    assert_equal grades(:k_grade), book_charges(:one).grade
+  end
+
   private
   def random_book_charge
     BookCharge.new(grade_id: rand(1..10), school_year_id: rand(1..20), book_charge_in_cents: rand(100000))

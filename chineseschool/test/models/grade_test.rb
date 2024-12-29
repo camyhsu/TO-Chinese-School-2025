@@ -16,4 +16,8 @@ class GradeTest < ActiveSupport::TestCase
   test "lowest grade has no previous grade" do
     assert_nil grades(:pre_grade).previous_grade
   end
+
+  test "has one book charge" do
+    assert_equal book_charges(:one), grades(:k_grade).book_charge
+  end
 end
