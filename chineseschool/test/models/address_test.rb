@@ -139,11 +139,11 @@ class AddressTest < ActiveSupport::TestCase
 
   private
   def random_address
-    Address.new(city: TestRandom.alphanumeric(13),
-                email: "first.last@test.com",
+    Address.new(city: Faker::Address.city,
+                email: Faker::Internet.email,
                 home_phone: TestRandom.numeric(10),
-                state: TestRandom.alphanumeric(9),
-                street: TestRandom.alphanumeric(25),
+                state: Faker::Address.state_abbr,
+                street: Faker::Address.street_address(include_secondary: true),
                 zipcode: TestRandom.numeric(5))
   end
 end
