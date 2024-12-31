@@ -1,0 +1,10 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+one:
+  title: 中国地理常识
+  publisher: 香港中国旅游出版社
+  book_type: S
+
+two:
+  title: 中文天地 Chinese Link Level 2 Part1 课本
+  publisher: 培生教育 Pearson
+  book_type: S/T

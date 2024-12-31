@@ -47,6 +47,9 @@ amount.
 re-created) since it was not useful in the past and is complicated.
 * Role validation has been updated to a more precise inclusion check.
 
+#### LibraryBook
+* Book type validation has been updated to a more precise inclusion check.
+
 #### Person
 * Gender validation has been updated to a more precise inclusion check.
 * A new gender option OTHER has been added.
