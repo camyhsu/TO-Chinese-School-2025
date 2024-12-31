@@ -49,3 +49,6 @@ re-created) since it was not useful in the past and is complicated.
 
 #### Person
 * Gender validation has been updated to a more precise inclusion check.
+* A new gender option OTHER has been added.
+* InstructorAssignment and StudentClassAssignment associations no longer has 
+the `dependent: :destroy` options since we don't delete person data anyway.

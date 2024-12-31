@@ -5,6 +5,8 @@ class InstructorAssignment < ApplicationRecord
   ROLE_TEACHING_ASSISTANT = "Teaching Assistant"
   ROLES = [ ROLE_PRIMARY_INSTRUCTOR, ROLE_ROOM_PARENT, ROLE_SECONDARY_INSTRUCTOR, ROLE_TEACHING_ASSISTANT ]
 
+  belongs_to :instructor, class_name: "Person"
+
   validates :start_date, :end_date, presence: true
   validates :end_date, comparison: { greater_than_or_equal_to: :start_date }
   validates :role, inclusion: { in: ROLES }

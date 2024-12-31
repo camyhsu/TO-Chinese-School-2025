@@ -134,7 +134,7 @@ class AddressTest < ActiveSupport::TestCase
   end
 
   test "has one family" do
-    assert_equal families(:one), addresses(:one).family
+    assert_equal families(:doe), addresses(:one).family
   end
 
   test "valid if no family" do

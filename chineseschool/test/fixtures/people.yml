@@ -1,5 +1,4 @@
 # Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
-
 jane:
   english_first_name: Jane
   english_last_name: Doe
@@ -10,3 +9,18 @@ john:
   english_first_name: John
   english_last_name: Doe
   gender: "M"
+
+george:
+  english_first_name: George
+  english_last_name: Doe
+  gender: "M"
+
+mary:
+  english_first_name: Mary
+  english_last_name: Doe
+  gender: "F"
+
+karl:
+  english_first_name: Karl
+  english_last_name: Doe
+  gender: "OTHER"

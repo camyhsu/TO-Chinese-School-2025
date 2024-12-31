@@ -38,8 +38,29 @@ class InstructorAssignmentTest < ActiveSupport::TestCase
     assert_not instructor_assignment_without_valid_role.valid?
   end
 
+  test "belongs to an instructor" do
+    assert_equal people(:jane), instructor_assignments(:one).instructor
+  end
+
+  test "invalid if no instructor" do
+    instructor_assignment_without_instructor = random_instructor_assignment
+    assert instructor_assignment_without_instructor.valid?
+    instructor_assignment_without_instructor.instructor = nil
+    assert_not instructor_assignment_without_instructor.valid?
+  end
+
+  test "invalid if the instructor does not exist" do
+    instructor_assignment_without_instructor = random_instructor_assignment
+    assert instructor_assignment_without_instructor.valid?
+    instructor_assignment_without_instructor.instructor_id = 1000 # pointing to a person id not in the fixtures
+    assert_not instructor_assignment_without_instructor.valid?
+  end
+
   private
   def random_instructor_assignment
-    InstructorAssignment.new(start_date: Date.today - 1.week, end_date: Date.today, role: InstructorAssignment::ROLES.sample)
+    InstructorAssignment.new(instructor: people(:jane),
+                             start_date: Date.today - 1.week,
+                             end_date: Date.today,
+                             role: InstructorAssignment::ROLES.sample)
   end
 end

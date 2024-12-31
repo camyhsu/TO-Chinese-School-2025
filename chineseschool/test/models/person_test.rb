@@ -36,6 +36,14 @@ class PersonTest < ActiveSupport::TestCase
     assert person_without_address.valid?
   end
 
+  test "has many instructor assignments" do
+    assert_includes people(:jane).instructor_assignments, instructor_assignments(:one)
+    assert_includes people(:jane).instructor_assignments, instructor_assignments(:three)
+    assert_not_includes people(:jane).instructor_assignments, instructor_assignments(:two)
+  end
+
+
+
   private
   def random_person
     Person.new(english_first_name: Faker::Name.first_name,
