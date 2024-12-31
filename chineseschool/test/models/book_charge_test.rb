@@ -31,6 +31,13 @@ class BookChargeTest < ActiveSupport::TestCase
   test "invalid if no grade" do
     book_charge_without_grade = random_book_charge
     assert book_charge_without_grade.valid?
+    book_charge_without_grade.grade_id = nil
+    assert_not book_charge_without_grade.valid?
+  end
+
+  test "invalid if the grade does not exist" do
+    book_charge_without_grade = random_book_charge
+    assert book_charge_without_grade.valid?
     book_charge_without_grade.grade_id = 1000 # pointing to a grade id not in the fixtures
     assert_not book_charge_without_grade.valid?
   end

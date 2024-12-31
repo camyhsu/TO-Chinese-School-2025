@@ -137,6 +137,22 @@ class AddressTest < ActiveSupport::TestCase
     assert_equal families(:one), addresses(:one).family
   end
 
+  test "valid if no family" do
+    address_without_family = random_address
+    address_without_family.family = nil
+    assert address_without_family.valid?
+  end
+
+  test "has one person" do
+    assert_equal people(:jane), addresses(:one).person
+  end
+
+  test "valid if no person" do
+    address_without_person = random_address
+    address_without_person.person = nil
+    assert address_without_person.valid?
+  end
+
   private
   def random_address
     Address.new(city: Faker::Address.city,

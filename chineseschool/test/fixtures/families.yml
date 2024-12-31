@@ -6,3 +6,5 @@
 #
 one:
   address: one
+  parent_one: jane
+  parent_two: john

@@ -25,6 +25,12 @@ be done separately.
 
 ### Models
 
+#### Models not in the new version
+The following models are no longer used and not re-created in the new version of this application:
+* InPersonRegistrationTransaction
+* InstructorAssignmentHistory
+* JerseyNumber
+
 #### Address
 * Phone number validations have been updated to a more precise 10 digit 
 validation and include cell phone in the validation.
@@ -40,3 +46,6 @@ amount.
 * The "no overlapping assignment period" validation has been removed (not 
 re-created) since it was not useful in the past and is complicated.
 * Role validation has been updated to a more precise inclusion check.
+
+#### Person
+* Gender validation has been updated to a more precise inclusion check.

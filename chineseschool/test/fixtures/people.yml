@@ -1,0 +1,12 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+jane:
+  english_first_name: Jane
+  english_last_name: Doe
+  gender: "F"
+  address: one
+
+john:
+  english_first_name: John
+  english_last_name: Doe
+  gender: "M"

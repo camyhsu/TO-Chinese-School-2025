@@ -1,5 +1,6 @@
 class Address < ApplicationRecord
   has_one :family
+  has_one :person
 
   validates :city, :state, :street, presence: true
   validates :cell_phone, length: { is: 10 }, allow_blank: true
