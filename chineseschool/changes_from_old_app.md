@@ -50,6 +50,10 @@ re-created) since it was not useful in the past and is complicated.
 #### LibraryBook
 * Book type validation has been updated to a more precise inclusion check.
 
+#### LibraryBookCheckout
+* A new validation is added for the return date to be the same or in the 
+future of the checked out date.
+
 #### Person
 * Gender validation has been updated to a more precise inclusion check.
 * A new gender option OTHER has been added.

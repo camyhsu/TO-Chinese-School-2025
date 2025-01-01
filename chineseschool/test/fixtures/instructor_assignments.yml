@@ -1,18 +1,18 @@
 # Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 one:
   instructor: jane
-  start_date: Date.today - 1.week
-  end_date: Date.today
-  role: InstructorAssignment::ROLE_PRIMARY_INSTRUCTOR
+  start_date: <%= Date.today - 1.week %>
+  end_date: <%= Date.today %>
+  role: <%= InstructorAssignment::ROLE_PRIMARY_INSTRUCTOR %>
 
 two:
   instructor: john
-  start_date: Date.today - 1.week
-  end_date: Date.today
-  role: InstructorAssignment::ROLE_ROOM_PARENT
+  start_date: <%= Date.today - 1.week %>
+  end_date: <%= Date.today %>
+  role: <%= InstructorAssignment::ROLE_ROOM_PARENT %>
 
 three:
   instructor: jane
-  start_date: Date.today - 1.week
-  end_date: Date.today
-  role: InstructorAssignment::ROLE_SECONDARY_INSTRUCTOR
+  start_date: <%= Date.today - 1.week %>
+  end_date: <%= Date.today %>
+  role: <%= InstructorAssignment::ROLE_SECONDARY_INSTRUCTOR %>
