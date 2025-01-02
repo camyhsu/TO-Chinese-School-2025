@@ -42,7 +42,23 @@ class PersonTest < ActiveSupport::TestCase
     assert_not_includes people(:jane).instructor_assignments, instructor_assignments(:two)
   end
 
+  test "valid if no instructor assignments" do
+    person_without_instructor_assignments = random_person
+    person_without_instructor_assignments.instructor_assignments = []
+    assert person_without_instructor_assignments.valid?
+  end
 
+  test "has many registration preferences" do
+    assert_includes people(:george).registration_preferences, registration_preferences(:george_one)
+    assert_includes people(:george).registration_preferences, registration_preferences(:george_two)
+    assert_not_includes people(:george).registration_preferences, registration_preferences(:mary_one)
+  end
+
+  test "valid if no registration preferences" do
+    person_without_registration_preferences = random_person
+    person_without_registration_preferences.registration_preferences = []
+    assert person_without_registration_preferences.valid?
+  end
 
   private
   def random_person

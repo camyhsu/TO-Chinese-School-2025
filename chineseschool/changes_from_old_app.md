@@ -62,3 +62,6 @@ the `dependent: :destroy` options since we don't delete person data anyway.
 
 #### RegistrationPayment
 * All monetary amount validations has been updated to a more precise non-negative integer check.
+
+#### RegistrationPreference
+* Grade is now enforced to be present through the `belongs_to` association.

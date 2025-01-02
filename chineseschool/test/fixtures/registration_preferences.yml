@@ -1,0 +1,20 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+george_one:
+  student: george
+  entered_by: jane
+  school_class_type: SE
+  grade_id: 1
+
+george_two:
+  student: george
+  entered_by: john
+  school_class_type: S
+  grade_id: 2
+  previous_grade_id: 1
+
+mary_one:
+  student: mary
+  entered_by: jane
+  school_class_type: T
+  grade_id: 2
