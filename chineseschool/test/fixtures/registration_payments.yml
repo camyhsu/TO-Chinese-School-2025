@@ -1,0 +1,18 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+paid_one:
+  paid_by: jane
+  elective_class_due_in_cents: 0
+  pva_due_in_cents: 1200
+  ccca_due_in_cents: 3400
+  grand_total_in_cents: 65000
+  paid: true
+  request_in_person: false
+
+unpaid_two:
+  paid_by: john
+  elective_class_due_in_cents: 1000
+  pva_due_in_cents: 3400
+  ccca_due_in_cents: 1200
+  grand_total_in_cents: 56000
+  paid: false
+  request_in_person: false

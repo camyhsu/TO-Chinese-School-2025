@@ -59,3 +59,6 @@ future of the checked out date.
 * A new gender option OTHER has been added.
 * InstructorAssignment and StudentClassAssignment associations no longer has 
 the `dependent: :destroy` options since we don't delete person data anyway.
+
+#### RegistrationPayment
+* All monetary amount validations has been updated to a more precise non-negative integer check.

@@ -1,11 +1,24 @@
 # Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+failed:
+  registration_payment: paid_one
+  amount_in_cents: 12300
+  credit_card_type: discover
+  credit_card_last_digits: 3456
+  approval_status: DECLINED
+  credit: false
 
-# This model initially had no columns defined. If you add columns to the
-# model remove the "{}" from the fixture names and add the columns immediately
-# below each fixture, per the syntax in the comments below
-#
-one: {}
-# column: value
-#
-two: {}
-# column: value
+succeeded:
+  registration_payment: paid_one
+  amount_in_cents: 45600
+  credit_card_type: visa
+  credit_card_last_digits: 7890
+  approval_status: APPROVED
+  credit: false
+
+errored:
+  registration_payment: unpaid_two
+  amount_in_cents: 7800
+  credit_card_type: master
+  credit_card_last_digits: 3214
+  approval_status: ERROR
+  credit: false

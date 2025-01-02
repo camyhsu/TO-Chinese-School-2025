@@ -37,9 +37,28 @@ class GatewayTransactionTest < ActiveSupport::TestCase
     assert_not gateway_transaction_without_credit_card_last_digits.valid?
   end
 
+  test "belongs to a registration payment" do
+    assert_equal registration_payments(:paid_one), gateway_transactions(:failed).registration_payment
+  end
+
+  test "invalid if no registration payment" do
+    gateway_transaction_without_registration_payment = random_gateway_transaction
+    assert gateway_transaction_without_registration_payment.valid?
+    gateway_transaction_without_registration_payment.registration_payment = nil
+    assert_not gateway_transaction_without_registration_payment.valid?
+  end
+
+  test "invalid if the registration payment does not exist" do
+    gateway_transaction_without_registration_payment = random_gateway_transaction
+    assert gateway_transaction_without_registration_payment.valid?
+    gateway_transaction_without_registration_payment.registration_payment_id = 1000 # pointing to a registration payment id not in the fixtures
+    assert_not gateway_transaction_without_registration_payment.valid?
+  end
+
   private
   def random_gateway_transaction
-    GatewayTransaction.new(amount_in_cents: TestRandom.integer_from_0_to_exclusive(100000),
+    GatewayTransaction.new(registration_payment: registration_payments(:paid_one),
+                           amount_in_cents: TestRandom.integer_from_0_to_exclusive(100000),
                            credit_card_type: TestRandom.alphanumeric(5),
                            credit_card_last_digits: TestRandom.numeric(4))
   end
