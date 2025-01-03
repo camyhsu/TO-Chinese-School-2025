@@ -1,0 +1,20 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+accounting_payment:
+  name: Accounting Registration Report Payments By Date
+  controller: accounting/registration_report
+  action: registration_payments_by_date
+
+create_new_school_class:
+  name: Create New School Class
+  controller: admin/school_classes
+  action: new
+
+create_school_year:
+  name: Create School Year
+  controller: admin/school_years
+  action: new
+
+student_list:
+  name: Student List For One School Class
+  controller: instruction/school_classes
+  action: show

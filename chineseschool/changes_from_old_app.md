@@ -65,3 +65,6 @@ the `dependent: :destroy` options since we don't delete person data anyway.
 
 #### RegistrationPreference
 * Grade is now enforced to be present through the `belongs_to` association.
+
+#### Right
+* Validations are added for name, controller, and action to be present.
