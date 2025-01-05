@@ -1,0 +1,23 @@
+class Role < ApplicationRecord
+  ROLE_NAME_SUPER_USER = "Super User"
+  ROLE_NAME_PRINCIPAL = "Principal"
+  ROLE_NAME_ACADEMIC_VICE_PRINCIPAL = "Academic Vice Principal"
+  ROLE_NAME_REGISTRATION_OFFICER = "Registration Officer"
+  ROLE_NAME_ACCOUNTING_OFFICER = "Accounting Officer"
+  ROLE_NAME_ACTIVITY_OFFICER = "Activity Officer"
+  ROLE_NAME_COMMUNICATION_OFFICER = "Communication Officer"
+  ROLE_NAME_INSTRUCTION_OFFICER = "Instruction Officer"
+  ROLE_NAME_LIBRARIAN = "Librarian"
+
+  ROLE_NAME_INSTRUCTOR = "Instructor"
+  ROLE_NAME_ROOM_PARENT = "Room Parent"
+  ROLE_NAME_STUDENT_PARENT = "Student Parent"
+
+  ROLE_NAME_CCCA_STAFF = "CCCA Staff"
+  ROLE_NAME_PVA = "PVA"
+
+  has_and_belongs_to_many :rights, -> { order "controller ASC, action ASC" }
+
+  validates :name, presence: true
+  validates :name, uniqueness: true
+end

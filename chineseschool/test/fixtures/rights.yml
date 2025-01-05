@@ -14,6 +14,11 @@ create_school_year:
   controller: admin/school_years
   action: new
 
+list_school_year:
+  name: List School Year
+  controller: admin/school_years
+  action: index
+
 student_list:
   name: Student List For One School Class
   controller: instruction/school_classes

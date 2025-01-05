@@ -60,7 +60,7 @@ class FamilyTest < ActiveSupport::TestCase
     assert_not_includes families(:doe).children, people(:jane)
   end
 
-  test "valid if no children" do
+  test "valid if no child" do
     family_without_children = families(:doe)
     assert family_without_children.valid?
     family_without_children.children = []

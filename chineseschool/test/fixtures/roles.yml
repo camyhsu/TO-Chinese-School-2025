@@ -1,0 +1,11 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+registration:
+  name: Registration Officer
+  rights: create_new_school_class, create_school_year, list_school_year, student_list
+
+accounting:
+  name: Accounting Officer
+  rights: accounting_payment, student_list
+
+ccca_staff:
+  name: CCCA Staff
